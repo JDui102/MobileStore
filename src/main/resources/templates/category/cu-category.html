@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/"
+      xmlns:layout="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{fragments/layout}"
+>
+    <head>
+        <title>Update Category</title>
+    </head>
+
+    <body>
+        <main layout:fragment="content">
+            <div class="container mt-4">
+                <div class="col-lg-6 col-md-6 col-sm-6 justify-content-center card m-auto">
+                    <h2 class="text-center mt-2" th:text="${title}"></h2>
+
+                    <div class="card-body">
+                        <form th:action="|${url}|" method="post" th:object="${category}">
+                            <div class="form-group">
+                                <label>Category name</label>
+                                <input name="name"
+                                       th:field="*{name}"
+                                       th:value="*{name}"
+                                       class="form-control mb-4 mt-1 focus"
+                                       maxlength="50" type="text"
+                                       placeholder="Not empty and less than or equal to 50 characters!"
+                                       autocomplete="off">
+
+                                <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="text-danger"></p>
+                            </div>
+
+                            <div class="box-footer form-button">
+                                <a th:href="@{/categories}" class="btn btn-danger">Cancel</a>
+                                <button type="submit" class="btn btn-success" th:text="${buttonSubmit}"></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

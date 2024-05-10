@@ -1,0 +1,5 @@
+<!-- Notification -->
+<div th:if="${success} or ${failed}" class="notification " th:fragment="notification">
+    <span th:if="${success}" th:text="${success}" class="text-center m-0 p-2 alert alert-success" role="alert"></span>
+    <span th:if="${failed}" th:text="${failed}" class="text-center m-0 p-2 alert alert-danger" role="alert"></span>
+</div>

@@ -1,0 +1,22 @@
+<div class="container mt-4" th:fragment="search(action, placeholder)">
+    <!-- Search -->
+    <form th:action="${action}" method="get" class="search">
+        <div class="input-group search-group">
+            <input class="form-control"
+                   name="name"
+                   type="text"
+                   id="searchInput"
+                   th:attr="placeholder=${placeholder}"
+                   autocomplete="off"
+                   th:value="${searchName}"
+            >
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary custom-button" type="submit" id="submitButton" disabled>
+                    <i class="bi bi-search"></i>
+                </button>
+            </div>
+        </div>
+
+        <span class="search-message text-primary" th:if="${searchName}" th:text="'Result search for \'' + ${searchName} + '\''"></span>
+    </form>
+</div>

@@ -1,0 +1,134 @@
+.container .table {
+  text-align: left;
+}
+
+.container .table .action {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.container .table .action i {
+  cursor: pointer;
+}
+
+.btn-success, .btn-danger, .btn-primary {
+    min-width: 150px;
+}
+
+.active {
+    pointer-events: none;
+}
+
+.search {
+    position: relative;
+}
+
+.search-message {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(150%);
+}
+
+.search-history {
+    position: absolute;
+    left: 0;
+    right: 0;
+    color: #fff;
+    background: #6c757d;
+    text-align: left;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 4px;
+
+    max-height: 220px;
+    overflow: auto;
+}
+
+.search-history-item {
+    padding: 10px 10px 10px 12px;
+    cursor: pointer;
+}
+
+.search-history-item:hover {
+    background: #eee;
+    color: #000;
+}
+
+.category-message {
+    display: block;
+    font-size: 1rem;
+    font-weight: 400;
+    position: absolute;
+}
+
+.notification {
+    position: fixed;
+    top: 0.5rem;
+    right: 0.5rem;
+    z-index: 999;
+    transition: all 0.2s ease;
+    opacity: 1;
+}
+
+.notification span {
+    display: block;
+    min-width: 320px;
+}
+
+.notification.notification--disable {
+    animation: fadeOut 0.4s linear forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(150%);
+        opacity: 0;
+    }
+}
+
+.custom-button {
+    border-radius: 0 4px 4px 0;
+}
+
+.table-row .btn {
+    background: #f2f2f2;
+    border: none;
+    transition: all linear 0.15s;
+}
+
+.table-row:nth-of-type(odd) .btn
+{
+    background: white;
+}
+
+.table-row .btn:hover {
+    filter: saturate(0.5);
+}
+
+.page_not_found {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 25%;
+}
+
+.form-button {
+    text-align: right;
+}
+
+.add-btn-wrapper {
+    text-align: right;
+}
+
+.show-password-wrapper > * {
+    cursor: pointer;
+}
+
+#show-password-checkbox {
+    margin-right: 5px;
+}

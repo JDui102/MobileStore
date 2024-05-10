@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/"
+      xmlns:layout="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{fragments/layout}"
+>
+    <body>
+        <div class="container page_not_found" layout:fragment="content">
+            <h1 class="text-secondary text-center mb-2">404 - Page Not Found</h1>
+
+            <div th:if="${param.not_have_access}" class="d-flex justify-content-center align-items-end">
+                <h4  class="text-danger">You not have access!</h4>
+            </div>
+
+            <div th:if="${failed}" class="d-flex justify-content-center align-items-end">
+                <h4 th:text="${failed}" class="text-danger"></h4>
+            </div>
+        </div>
+    </body>
+</html>
